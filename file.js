@@ -6,32 +6,32 @@ const path = require('path')
 
 const fileName = 'text.txt';
 
-// fs.readFile(fileName, 'utf-8', (err, data) => {
-//     if (err){
-//         console.log(err.message);
-//         return;
-//     }
-//     console.log("")
-//     console.log("file content:")
-//     console.log(data)
-//     console.log("")
+fs.readFile(fileName, 'utf-8', (err, data) => {
+    if (err){
+        console.log(err.message);
+        return;
+    }
+    console.log("")
+    console.log("file content:")
+    console.log(data)
+    console.log("")
     
     
-// });
+});
 
 
-// fs.stat(fileName, (err, stats) => {
-//     if(err){
-//         console.log(err)
-//         return;
-//     }
-//     console.log("file size:")
-//     console.log(stats.size)
-//     console.log("")
-//     console.log("date of creation:")
-//     console.log(stats.birthtime.toISOString())
+fs.stat(fileName, (err, stats) => {
+    if(err){
+        console.log(err)
+        return;
+    }
+    console.log("file size:")
+    console.log(stats.size)
+    console.log("")
+    console.log("date of creation:")
+    console.log(stats.birthtime.toISOString())
 
-// } ) 
+} ) 
 
 
 //2
@@ -39,70 +39,70 @@ const fileName = 'text.txt';
 const directoryPath = './'
 
 
-// console.log(directoryPath)
+console.log(directoryPath)
 
-// fs.readdir(directoryPath, (err, items) => {
-//     if(err){
-//         console.log(err)
-//         return;
-//     }
-//     console.log(`this directory holds ${items.length} items`)
+fs.readdir(directoryPath, (err, items) => {
+    if(err){
+        console.log(err)
+        return;
+    }
+    console.log(`this directory holds ${items.length} items`)
 
-//     items.forEach((item, index) => {
-//         const itemPath = path.join(directoryPath, item)
+    items.forEach((item, index) => {
+        const itemPath = path.join(directoryPath, item)
 
-//         fs.stat(itemPath, (err, stats) =>{
-//             if(err){
-//                 console.log(`${itemPath}: ${err.message}`)
-//             } else {
-//                 if(stats.isFile()){
-//                     console.log(`file: ${itemPath}`)
-//                 }
-//             }
+        fs.stat(itemPath, (err, stats) =>{
+            if(err){
+                console.log(`${itemPath}: ${err.message}`)
+            } else {
+                if(stats.isFile()){
+                    console.log(`file: ${itemPath}`)
+                }
+            }
 
                 
             
             
-//         })
-//     });
-// })
+        })
+    });
+})
 
 
 //3
 
-// function timer(n){
-//     console.log(n)
+function timer(n){
+    console.log(n)
 
-//     if (n > 0){
-//         setTimeout(()=>{
-//             timer(n-1)}, 1000)
-//     }else{
-//         console.log("times is up")
-//     }
-// }
+    if (n > 0){
+        setTimeout(()=>{
+            timer(n-1)}, 1000)
+    }else{
+        console.log("times is up")
+    }
+}
 
-// timer(5)
+timer(5)
 
 //4
 
-// const name = "quotes.txt"
+const name = "quotes.txt"
 
-// fs.readFile(name, 'utf-8', (err, data) =>{
-//     if(err){
-//         console.log(err.message)
-//         return;
-//     }
+fs.readFile(name, 'utf-8', (err, data) =>{
+    if(err){
+        console.log(err.message)
+        return;
+    }
 
-//     const lines = data.split('\n');
+    const lines = data.split('\n');
     
-//     const nonEmptyLines = lines.filter(line => line.trim() !== '');
+    const nonEmptyLines = lines.filter(line => line.trim() !== '');
     
-//     const randomIndex = Math.floor(Math.random() * nonEmptyLines.length)
+    const randomIndex = Math.floor(Math.random() * nonEmptyLines.length)
 
-//     const randomLine = nonEmptyLines[randomIndex];
+    const randomLine = nonEmptyLines[randomIndex];
 
-//     console.log(`random line: ${randomLine}`)
-// })
+    console.log(`random line: ${randomLine}`)
+})
 
 //5
 
